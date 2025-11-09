@@ -129,7 +129,12 @@ const DecisionDeck = () => {
   };
 
   const getNextActions = () => {
-    const actions = [];
+    const actions: Array<{
+      layer: string;
+      requirement: string;
+      status: string;
+      priority: string;
+    }> = [];
     layers.forEach(layer => {
       layer.requirements.forEach((req, idx) => {
         const status = getStatus(`${layer.id}-${idx}`, req.status);
@@ -408,7 +413,7 @@ const DecisionDeck = () => {
       {showPrintView && (
         <div className="print-only bg-white p-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">OnMission: Direction & Destiny Decision Deck</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">OnMission On Boarding</h1>
             <p className="text-lg text-gray-600">Readiness & Alignment Diagnostic Report</p>
             <p className="text-sm text-gray-500 mt-2">{new Date().toLocaleDateString()}</p>
           </div>
@@ -503,8 +508,8 @@ const DecisionDeck = () => {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">Direction & Destiny Decision Deck</h1>
-              <p className="text-lg text-gray-600">OnMission: Readiness and Alignment Diagnostic</p>
+              <h1 className="text-4xl font-bold text-gray-900 mb-2">OnMission On Boarding</h1>
+              <p className="text-lg text-gray-600">Readiness and Alignment Diagnostic</p>
             </div>
             <div className="flex gap-4 items-center">
               <div className="bg-white rounded-lg shadow px-4 py-2 flex items-center gap-2">

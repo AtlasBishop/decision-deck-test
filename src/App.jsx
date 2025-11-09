@@ -1,4 +1,4 @@
-import DecisionDeck from '../DecisionDeck'
+import DecisionDeck from '../DecisionDeck.tsx'
 
 function App() {
   return <DecisionDeck />
